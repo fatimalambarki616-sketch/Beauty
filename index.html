@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <!-- معلومات الصفحة و SEO -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>متجر الجمال - Makeup & Skincare</title>
+  <meta name="description" content="أفضل أدوات التجميل والعناية بالبشرة. تسوق منتجات Makeup & Skincare بسهولة وبساطة.">
+  <meta name="keywords" content="مستحضرات تجميل, مكياج, عناية بالبشرة, Makeup, Skincare, متجر إلكتروني">
+  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/616/616408.png" type="image/png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS أساسي -->
+  <style>
+    /* ==========================
+       Reset & Base
+    ========================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      line-height: 1.6;
+      background: #fff5f8;
+      color: #333;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    /* ==========================
+       Header
+    ========================== */
+    header {
+      background-color: #ff4081;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    nav a {
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: rgba(255,255,255,0.3);
+      border-radius: 5px;
+    }
+
+    /* ==========================
+       Search Bar
+    ========================== */
+    .search-bar {
+      margin: 1rem 2rem;
+      text-align: center;
+    }
+
+    .search-bar input {
+      padding: 0.5rem 1rem;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 25px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    /* ==========================
+       Main Content
+    ========================== */
+    main {
+      padding: 2rem;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ff4081;
+    }
+
+    /* ==========================
+       Product Grid
+    ========================== */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+    }
+
+    .product-card img {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .product-content {
+      padding: 1rem;
+    }
+
+    .product-content h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-content p {
+      font-weight: bold;
+      color: #ff4081;
+      margin-bottom: 1rem;
+    }
+
+    .product-content button {
+      background-color: #ff4081;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .product-content button:hover {
+      background-color: #e91e63;
+    }
+
+    /* ==========================
+       Featured Section
+    ========================== */
+    .featured {
+      margin: 2rem 0;
+      background: #ffe4ec;
+      padding: 1.5rem;
+      border-radius: 15px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .featured div {
+      text-align: center;
+    }
+
+    .featured h4 {
+      margin-top: 0.5rem;
+      font-weight: 600;
+      color: #ff4081;
+    }
+
+    /* ==========================
+       Footer
+    ========================== */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #ff4081;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    /* ==========================
+       Responsive
+    ========================== */
+    @media(max-width:768px){
+      header {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .featured {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================
+       Header
+  ========================== -->
+  <header>
+    <h1>متجر الجمال</h1>
+    <nav>
+      <a href="#">الرئيسية</a>
+      <a href="#">منتجات</a>
+      <a href="#">عروض</a>
+      <a href="#">اتصل بنا</a>
+    </nav>
+  </header>
+
+  <!-- ==========================
+       Search
+  ========================== -->
+  <div class="search-bar">
+    <input type="text" id="search" placeholder="ابحث عن منتج...">
+  </div>
+
+  <!-- ==========================
+       Featured Products
+  ========================== -->
+  <section class="featured">
+    <div>
+      <img src="https://images.unsplash.com/photo-1612832020843-7a1a32f23810?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=200" alt="عرض خاص 1">
+      <h4>عرض خاص 1</h4>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1612831455541-1f6a0e9a541b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=200" alt="عرض خاص 2">
+      <h4>عرض خاص 2</h4>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1600180758895-2c04274259aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=200" alt="عرض خاص 3">
+      <h4>عرض خاص 3</h4>
+    </div>
+  </section>
+
+  <!-- ==========================
+       Product List
+  ========================== -->
+  <main>
+    <h2 class="section-title">منتجاتنا</h2>
+    <div class="products" id="product-list">
+      <!-- Product Card Template -->
+      <div class="product-card" data-name="مرطب البشرة">
+        <img src="https://images.unsplash.com/photo-1588776814546-0c1a3f6e05cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400" alt="مرطب البشرة">
+        <div class="product-content">
+          <h3>مرطب البشرة</h3>
+          <p>50 درهم</p>
+          <button>إضافة إلى السلة</button>
+        </div>
+      </div>
+      <div class="product-card" data-name="روج أحمر">
+        <img src="https://images.unsplash.com/photo-1612831455541-1f6a0e9a541b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400" alt="روج أحمر">
+        <div class="product-content">
+          <h3>روج أحمر</h3>
+          <p>80 درهم</p>
+          <button>إضافة إلى السلة</button>
+        </div>
+      </div>
+      <div class="product-card" data-name="ماسك الوجه">
+        <img src="https://images.unsplash.com/photo-1599941971131-35f77f519f88?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400" alt="ماسك الوجه">
+        <div class="product-content">
+          <h3>ماسك الوجه</h3>
+          <p>65 درهم</p>
+          <button>إضافة إلى السلة</button>
+        </div>
+      </div>
+      <div class="product-card" data-name="ظلال العيون">
+        <img src="https://images.unsplash.com/photo-1612832020843-7a1a32f23810?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400" alt="ظلال العيون">
+        <div class="product-content">
+          <h3>ظلال العيون</h3>
+          <p>70 درهم</p>
+          <button>إضافة إلى السلة</button>
+        </div>
+      </div>
+      <!-- يمكنك إضافة المزيد من المنتجات بنفس النمط -->
+    </div>
+  </main>
+
+  <!-- ==========================
+       Footer
+  ========================== -->
+  <footer>
+    جميع الحقوق محفوظة © 2026 متجر الجمال
+  </footer>
+
+  <!-- ==========================
+       JavaScript
+  ========================== -->
+  <script>
+    // ==========================
+    // Filter Products by Search
+    // ==========================
+    const searchInput = document.getElementById('search');
+    const products = document.querySelectorAll('.product-card');
+
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase();
+      products.forEach(product => {
+        const name = product.dataset.name.toLowerCase();
+        if(name.includes(query)){
+          product.style.display = 'block';
+        } else {
+          product.style.display = 'none';
+        }
+      });
+    });
+
+    // ==========================
+    // Simple "Add to Cart" Animation
+    // ==========================
+    const buttons = document.querySelectorAll('.product-card button');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.textContent = "تم الإضافة ✔";
+        btn.disabled = true;
+        setTimeout(() => {
+          btn.textContent = "إضافة إلى السلة";
+          btn.disabled = false;
+        }, 1500);
+      });
+    });
+  </script>
+
+</body>
+</html>
